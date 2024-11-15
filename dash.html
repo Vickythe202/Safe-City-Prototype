@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeRoute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    
+</head>
+<body>
+   
+    <div class="contain">
+        <a href="./real-timeinformation.html">
+            <div class="feature" onclick="handleFeatureClick('search')">
+                <img src="./images/traffic.png" alt="Real-traffic information">
+                <h3>Real-traffic information</h3>
+                <p>Get accurate real-time traffic updates.</p>
+            </div>
+        </a>  
+        <a href="./routesuggestion.html">
+            <div class="feature" onclick="handleFeatureClick('menu')">
+                <img src="./images/route.png" alt="Route Suggestion">
+                <h3>Route suggestion</h3>
+                <p>Offers optimal routes based on traffic conditions.</p>
+            </div>
+        </a>
+        <a href="./safedrivingpractices.html">
+            <div class="feature" onclick="handleFeatureClick('traffic')">
+                <img src="./images/driving.png" alt="Safe driving practices">
+                <h3>Safe Driving Practices</h3>
+                <p>Encourage and inform users about safe driving habits.</p>
+            </div>
+        </a>
+        <a href="./about.html">
+            <div class="feature" onclick="handleFeatureClick('report')">
+                <img src="./images/about.png" alt="About">
+                <h3>About</h3>
+                <p>Learn more about our app and team.</p>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        function handleFeatureClick(feature) {
+            console.log(`Clicked on the ${feature} feature.`);
+            // Add your feature-specific functionality here
+        }
+    </script>
+</body>
+</html>

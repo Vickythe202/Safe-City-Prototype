@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #map {
+    height: 70vh; /* 70% of the viewport height */
+    width: 100%; /* Full width */
+    background-color: #eee; /* Light gray background for the map */
+  }
+  
+  #input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  #input-container input {
+    margin-bottom: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  #input-container button {
+    padding: 8px 15px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }

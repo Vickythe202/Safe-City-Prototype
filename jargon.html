@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeRoute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('background.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+            padding: 30px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 30px;
+        }
+
+        .feature {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: scale(1.1);
+        }
+
+        .feature img {
+            max-width: 40px;
+            margin-bottom: 5px;
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .feature p {
+            margin-bottom: 0;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="feature" onclick="handleFeatureClick('read_time')">
+            <img src="./images/time.png" alt="Read Time">
+            <h3>Read Time</h3>
+            <p>Check the estimated travel time</p>
+        </div>
+        <div class="feature" onclick="handleFeatureClick('traffic_info')">
+            <img src="./images/traffic.png" alt="Traffic Information">
+            <h3>Traffic Information</h3>
+            <p>Get real-time traffic updates</p>
+        </div>
+        <div class="feature" onclick="handleFeatureClick('route_suggestions')">
+            <img src="./images/route.png" alt="Route Suggestions">
+            <h3>Route Suggestions</h3>
+            <p>Find the best routes to your destination</p>
+        </div>
+        <div class="feature" onclick="handleFeatureClick('safe_driving')">
+            <img src="./images/driving.png" alt="Safe Driving">
+            <h3>Safe Driving</h3>
+            <p>Learn safe driving practices</p>
+        </div>
+        <div class="feature" onclick="handleFeatureClick('about')">
+            <img src="/images/info.png" alt="About">
+            <h3>About</h3>
+            <p>Learn more about the app</p>
+        </div>
+    </div>
+
+    <script>
+        function handleFeatureClick(feature) {
+            console.log(`Clicked on the ${feature} feature.`);
+            switch (feature) {
+                case 'read_time':
+                    displayReadTime();
+                    break;
+                case 'traffic_info':
+                    displayTrafficInfo();
+                    break;
+                case 'route_suggestions':
+                    displayRouteSuggestions();
+                    break;
+                case 'safe_driving':
+                    displaySafeDriving();
+                    break;
+                case 'about':
+                    displayAboutInfo();
+                    break;
+                default:
+                    console.log('Invalid feature selected.');
+            }
+        }
+
+        function displayReadTime() {
+            // Fetch current location and destination
+            const origin = 'San Francisco, CA';
+            const destination = 'Los Angeles, CA';
+
+            // Calculate estimated travel time
+            const travelTime = calculateTravelTime(origin, destination);
+
+            // Display the read time
+            alert(`The estimated travel time from ${origin} to ${destination} is ${travelTime} minutes.`);
+        }
+
+        function calculateTravelTime(origin, destination) {
+            // Implement logic to calculate the travel time based on distance, traffic, and other factors
+            // This is a simplified example
+            const distance = 380; // miles
+            const speed = 60; // mph
+            return Math.round(distance / speed * 60); // travel time in minutes
+        }
+
+        function displayTrafficInfo() {
+            // Fetch real-time traffic data from an API
+            const trafficData = getTrafficData();
+
+            // Display the traffic information
+            alert(`Current traffic conditions:\n${trafficData}`);
+        }
+
+        function getTrafficData() {
+            // Implement logic to fetch real-time traffic data from an API
+            // This is a simplified example
+            return 'Heavy traffic on highway 101. Expect delays of 20-30 minutes.';
+        }
+
+        function displayRouteSuggestions() {
+            // Fetch current location and destination
+            const origin = 'San Francisco, CA';
+            const destination = 'Los Angeles, CA';
+
+            // Provide route suggestions
+            const routeSuggestions = calculateRouteSuggestions(origin, destination);
+
+            // Display the route suggestions
+            alert(`Suggested routes from ${origin} to ${destination}:\n${routeSuggestions.join('\n')}`);
+        }
+
+        function calculateRouteSuggestions(origin, destination) {
+            // Implement logic to calculate the best route suggestions based on factors like distance, traffic, and user preferences
+            // This is a simplified example
+            return [
+                'Take highway 101 south',
+                'Take I-5 south',
+                'Take the scenic route through the coast'
+            ];
+        }
+
+        function displaySafeDriving() {
+            // Display safe driving tips and information
+            const safeDrivingTips = [
+                'Always wear your seatbelt',
+                'Obey speed limits',
+                'Avoid distractions while driving',
+                'Never drive under the influence of alcohol or drugs',
+                'Maintain a safe following distance'
+            ];
+
+            alert(`Safe Driving Tips:\n\n${safeDrivingTips.join('\n')}`);
+        }
+
+        function displayAboutInfo() {
+            // Display information about the app
+            const appInfo = 'SafeRoute is a mobile application designed to help you plan your journeys safely and efficiently. It provides real-time traffic updates, route suggestions, and safe driving tips to ensure a smooth and secure driving experience.';
+            alert(appInfo);
+        }
+    </script>
+</body>
+</html>

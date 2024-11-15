@@ -1,0 +1,64 @@
+
+
+body {
+    background-image: url('../images/loc.png');
+    background-size: cover;
+    background-position: top center;
+}
+.application{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+.app-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.app-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-section img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.app-section h1 {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+@media (max-width: 767px) {
+    .app-container {
+        padding: 20px;
+    }
+
+    .app-section {
+        height: 150px;
+    }
+
+    .app-section img {
+        max-width: 40px;
+    }
+
+    .app-section h1 {
+        font-size: 16px;
+    }
+}
